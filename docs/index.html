@@ -19,6 +19,7 @@ var myScore;
 function startGame() {
     // myGamePiece = new component(30, 30, "red", 10, 120);
     myGamePiece = new component(30, 30, "/WirSindBiene/pictures/bee.png", 10, 120, "image");
+    myFlower = new component(30,30, "/WirSindBiene/pictures/blossom.png", 100, 100, "image");
     myGamePiece.gravity = 0.05;
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
@@ -119,6 +120,8 @@ function updateGameArea() {
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
         myObstacles.push(new component(10, height, "green", x, 0));
         myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+        myObstacles.push(myFlower);
+        
     }
     for (i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].x += -1;

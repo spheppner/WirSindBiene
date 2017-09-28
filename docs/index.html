@@ -60,7 +60,7 @@ function component(width, height, color, x, y, type) {
             ctx.font = this.width + " " + this.height;
             ctx.fillStyle = color;
             ctx.fillText(this.text, this.x, this.y);
-        } elseif (this.type == "image") { 
+        } else if (this.type == "image") { 
             ctx.drawImage(this.image, 
             this.x, 
             this.y,
